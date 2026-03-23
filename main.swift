@@ -16,12 +16,9 @@ let kTranslateModel = "gpt-4o-mini"
 // API Key Management
 // =============================================================================
 func getEnvPath() -> String {
-    // Executable'in yanindaki .env
-    if let execURL = Bundle.main.executableURL {
-        let dir = execURL.deletingLastPathComponent().path
-        return (dir as NSString).appendingPathComponent(".env")
-    }
-    return ""
+    // ~/.config/voice-to-text/.env
+    let home = FileManager.default.homeDirectoryForCurrentUser.path
+    return (home as NSString).appendingPathComponent(".config/voice-to-text/.env")
 }
 
 func loadApiKey() -> String {
@@ -912,6 +909,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 // =============================================================================
 // Main
 // =============================================================================
+// Single instance kontrolu
+let runningApps = NSRunningApplication.runningApplications(withBundleIdentifier: "com.ishflow.voice-to-text")
+if runningApps.count > 1 {
+    print("Zaten calisiyor.")
+    exit(0)
+}
+
 let app = NSApplication.shared
 app.setActivationPolicy(.accessory) // Dock'ta gozukmesin
 let delegate = AppDelegate()
