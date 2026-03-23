@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>VoiceToText</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.ishflow.voice-to-text</string>
+    <key>CFBundleVersion</key>
+    <string>3.0</string>
+    <key>CFBundleShortVersionString</key>
+    <string>3.0</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleExecutable</key>
+    <string>VoiceToText</string>
+    <key>LSUIElement</key>
+    <true/>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Ses kaydı için mikrofon erişimi gerekli.</string>
+    <key>NSAppleEventsUsageDescription</key>
+    <string>Metin yapıştırma için gerekli.</string>
+</dict>
+</plist>
